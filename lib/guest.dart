@@ -10,7 +10,7 @@ final String columnlvl = 'lvl';
 final String columnremain = 'remainstep';
 final String columntree = 'tree';
 
-class Todo {
+class guest {
 
 
    int _tree;
@@ -41,7 +41,7 @@ class Todo {
   set tree(int tree) => this._tree = tree;
 
 
-  Todo.fromMap(Map<String, dynamic> map) {
+  guest.fromMap(Map<String, dynamic> map) {
     _tree = map[columntree];
     _step = map[columnstep];
     _name = map[columnname];
@@ -67,7 +67,7 @@ class Todo {
 
     return map;
   }
-  Todo() {
+  guest() {
     this._tree =0;
     this._step=0;
     this._name='Guest';
@@ -79,7 +79,7 @@ class Todo {
   }
 }
 
-class TodoProvider {
+class guestProvider {
   Database db;
   
   Future open(String path) async {
@@ -101,51 +101,51 @@ class TodoProvider {
     });
   }
 
-  // Future<Todo> insert(Todo todo) async{
-  //   todo.id = await db.insert(
-  //     tableToDo,
-  //     todo.toMap()
+  // Future<guest> insert(guest guest) async{
+  //   guest.id = await db.insert(
+  //     tableguest,
+  //     guest.toMap()
   //     );
-  //   return todo;
+  //   return guest;
   // }
 
-  // Future<Todo> getTodo(int id) async{
-  //   List<Map> maps = await db.query(tableToDo,
+  // Future<guest> getguest(int id) async{
+  //   List<Map> maps = await db.query(tableguest,
   //       columns: [columnId, columnDone, columnTitle],
   //       where: "$columnId = ?",
   //       whereArgs: [id]);
   //       if (maps.length > 0) {
-  //         return new Todo.fromMap(maps.first);
+  //         return new guest.fromMap(maps.first);
   //       }
   //       return null;
   // }
 
 //   Future<int> delete(int id) async{
-//     return await db.delete(tableToDo, where: "$columnid = ?", whereArgs: [id]);
+//     return await db.delete(tableguest, where: "$columnid = ?", whereArgs: [id]);
 //   }
 
-//   Future<int> update(Todo todo) async{
-//     return await db.update(tableToDo, todo.toMap(),
-//         where: "$columnid = ?", whereArgs: [todo.id]);
+//   Future<int> update(guest guest) async{
+//     return await db.update(tableguest guest.toMap(),
+//         where: "$columnid = ?", whereArgs: [guest.id]);
 //   }
 //   //test
-//   Future<List<Todo>> getto() async{
-//     var todo =await db.query(tableToDo, where: "$columnid = 0");
-//     return todo.map((string) => Todo.fromMap(string)).toList();
+//   Future<List<guest>> getto() async{
+//     var guest =await db.query(tableguest, where: "$columnid = 0");
+//     return guest.map((string) => guest.fromMap(string)).toList();
 //   }
 //   //test
-//   Future deleteAllCompTodo() async{
-//     await db.delete(tableToDo, where: "$columnid = 1");
+//   Future deleteAllCompguest() async{
+//     await db.delete(tableguest, where: "$columnid = 1");
 //   }
 //   //test
-//   Future<List<Todo>> getall() async{
-//     await this.open("todo.db");
-//     List<Map<String, dynamic>> todo = await db.query(tableToDo,where: "$columnid = 0");
+//   Future<List<guest>> getall() async{
+//     await this.open("guest.db");
+//     List<Map<String, dynamic>> guest = await db.query(tableguest,where: "$columnid = 0");
 //     if(db != null){
-//       print('data is null -------------------'+db.rawQuery('SELECT * FROM todo').toString());
+//       print('data is null -------------------'+db.rawQuery('SELECT * FROM guest').toString());
 //     }
-//     // print("pang: =>>"+todo.map((string) =>Todo.fromMap(string)).toList().toString());
-//     return todo.map((string) =>Todo.fromMap(string)).toList();
+//     // print("pang: =>>"+guest.map((string) =>guest.fromMap(string)).toList().toString());
+//     return guest.map((string) =>guest.fromMap(string)).toList();
 //   }
 
   
